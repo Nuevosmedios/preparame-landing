@@ -9,6 +9,8 @@ function days_to_test(){
 	var one_day = 1000*60*60*24;
 	var days_left = Math.round(diff/one_day);
 	$("#days_left").text(days_left);
+	$("#goldenModal").find(".days-left").text(days_left);
+	$("#silverModal").find(".days-left").text(days_left);
 }
 
 function get_universities(){
@@ -55,7 +57,7 @@ function get_careers(){
 	});
 }
 
-function send_dream(dream, career, institute){
+function send_dream(dream, career, institute, parentE){
 	$.ajax({
 		url: SEND_DREAM,
 		type: "GET",
@@ -68,7 +70,7 @@ function send_dream(dream, career, institute){
 		},
 		success: function(data){
 			if(data["temp_goal"]){
-				window.location = "http://app.preparame.co/preparame/goal_signup/?external=1";
+				window.location = "http://app.preparame.co/preparame/goal_signup/?external=1&parent_email="+parentE;
 			}
 		},
 		error:function(){
@@ -77,16 +79,45 @@ function send_dream(dream, career, institute){
 	});
 }
 
+function getQueryParams(qs) {
+	qs = qs.split("+").join(" ");
+	var params = {},
+		tokens,
+		re = /[?&]?([^=]+)=([^&]*)/g;
+
+	while (tokens = re.exec(qs)) {
+		params[decodeURIComponent(tokens[1])]
+			= decodeURIComponent(tokens[2]);
+	}
+
+	return params;
+}
+
 $(document).on("ready", function(){
 	var dream = "", career = "", institute = "";
 	days_to_test();
 	get_universities();
 	get_careers();
+	
+	var params = getQueryParams(document.location.search);
+
 	$("#send-dream").on("click", function(e){
 		e.preventDefault();
 		dream = $("#inputDream").val();
 		career = $("#inputCareer").val();
 		institute = $("#inputUniversity").val();
-		send_dream(dream, career, institute);
+		send_dream(dream, career, institute, params["parent_email"]);
+	});
+	$("#diagnosticModal").on("hidden", function(){
+		var iframe = '<iframe width="100%" height="315" src="//www.youtube.com/embed/ksjwpdvs0A8" frameborder="0" allowfullscreen></iframe>';
+		var videoContainer = $(this).find("#diagnosticIC");
+		videoContainer.empty();
+		videoContainer.append(iframe);
+	});
+	$("#resultsModal").on("hidden", function(){
+		var iframe = '<iframe width="100%" height="315" src="//www.youtube.com/embed/7ZOWnkOREqs" frameborder="0" allowfullscreen></iframe>';
+		var videoContainer = $(this).find("#resultsIC");
+		videoContainer.empty();
+		videoContainer.append(iframe);
 	});
 });
