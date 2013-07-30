@@ -1,3 +1,11 @@
+body { font-weight: 200; }
+strong, b { font-weight: 400; }
+h1,h2,h3,h4,h5 { font-weight: 400; }
+
+#contactModal { width: 620px; padding: 10px 10px 10px 0; }
+#contactModal .modal-body { padding: 15px 0 0 0; }
+
+#prepLogo { margin-right: 30px; }
 #prepLogo,
 #contact { margin-top: 2%; }
 
@@ -64,3 +72,12 @@ textarea { resize:none; }
 
 #days_left { background-color: #FFF; border-radius: 50%; color: #326C52; padding: 5px 6px; }
 
+#login-button { margin-top: 20px; }
+
+.big-modal { width: 900px !important; left: 37%; }
+#video { margin-bottom: 25px; }
+
+#days_left { background-color: #FFF; border-radius: 50%; color: #326C52; padding: 5px 6px; }
+
+#login-button { margin-top: 20px; }
+#videos-container { margin-top: 30px; }
