@@ -6,6 +6,7 @@ h1,h2,h3,h4,h5 { font-weight: 400; }
 #contactModal .modal-body { padding: 15px 0 0 0; }
 
 #prepLogo { margin-right: 30px; }
+
 #prepLogo,
 #contact { margin-top: 2%; }
 
@@ -15,10 +16,13 @@ h1,h2,h3,h4,h5 { font-weight: 400; }
 #slider-title { background: url(../img/px-title.png) repeat-x; background-position-y:-5px;  font-size: 18px; height: 35px; padding: 5px 20px 5px 20px; }
 
 #carousel-indicators ol.carousel-indicators { right: 45%; top: 105%; }
+#carousel-indicators-right ol.carousel-indicators { right: 45%; top: 110%; }
 
 #carousel-indicators ol.carousel-indicators li { background-color: #B22828; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; height: 15px; width: 15px; }
+#carousel-indicators-right ol.carousel-indicators li { background-color: #FFF; border: 1px solid #B22828; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; cursor:pointer; height: 15px; width: 15px; }
 
 #carousel-indicators ol.carousel-indicators li.active { background-color: #FFF; }
+#carousel-indicators-right ol.carousel-indicators li.active { background-color: #B22828; border: 1px solid #B22828; cursor:pointer; }
 
 #self-info ul { list-style-image: url(../img/list-icon.png); font-size: 18px; }
 #self-info ul li { color: #444444; padding-top: 20px; }
@@ -68,13 +72,6 @@ textarea { resize:none; }
 #days-left-text { color: #FFF; font-size: 25px; margin-top: 15%; margin-bottom: 15%; }
 
 #big-clock { margin-top: 10%; padding-left: 7%; }
-#video { margin-bottom: 25px; }
-
-#days_left { background-color: #FFF; border-radius: 50%; color: #326C52; padding: 5px 6px; }
-
-#login-button { margin-top: 20px; }
-
-.big-modal { width: 900px !important; left: 37%; }
 #video { margin-bottom: 25px; }
 
 #days_left { background-color: #FFF; border-radius: 50%; color: #326C52; padding: 5px 6px; }
