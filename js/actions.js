@@ -4,7 +4,7 @@ var SEND_DREAM = "http://app.preparame.co/preparame/json_save_goal/";
 
 function days_to_test(){
 	var d1 = new Date(); //"now"
-	var d2 = new Date("2013/08/25");  // some date
+	var d2 = new Date("2014/04/06");  // some date
 	var diff = Math.abs(d1-d2); 
 	var one_day = 1000*60*60*24;
 	var days_left = Math.round(diff/one_day);
